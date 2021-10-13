@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class NsfwConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'nsfw'
+    name = 'apps.nsfw'
