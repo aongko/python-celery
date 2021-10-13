@@ -36,8 +36,8 @@ class RetryableError(Exception):
 def classify_nsfw(title):
     # load_model()
     # model.predict()
-    if random.randint(1, 100) < 5:
-        # simulate 5% error rate
+    if random.randint(1, 100) < 20:
+        # simulate 20% error rate
         raise RetryableError('oops, something bad happened, please retry.')
     if set('cdf').intersection(set(title)):
         # pretend that it's NSFW if the title contains one of the letters 'xyz'.
