@@ -19,3 +19,18 @@ services:
       - .env
     depends_on:
       - redis
+
+  scheduler:
+    image: pycel
+    build: .
+    command:
+      - 'celery'
+      - '-A'
+      - 'pycel'
+      - 'beat'
+      - '-l'
+      - 'DEBUG'
+    env_file:
+      - .env
+    depends_on:
+      - redis
